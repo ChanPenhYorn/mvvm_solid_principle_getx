@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852866505330",
+    "project_id": "phum-parent-test",
+    "storage_bucket": "phum-parent-test.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852866505330:android:f7a0e5aed9400c5b1880eb",
+        "android_client_info": {
+          "package_name": "com.example_test.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsEeNEv0NqeuYxTpAINPAPMGyQxFOIeFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
