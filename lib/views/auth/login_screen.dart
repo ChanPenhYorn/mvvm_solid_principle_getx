@@ -40,7 +40,13 @@ class LoginScreen extends StatelessWidget {
                 logger.log("Login button pressed");
               },
               child: Text("Login"),
-            )
+            ),
+            Obx(() {
+              if (authController.user.value != null) {
+                return Text(authController.user.value!.email);
+              }
+              return SizedBox.shrink();
+            })
           ],
         );
       }),

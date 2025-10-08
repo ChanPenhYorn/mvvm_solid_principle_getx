@@ -1,12 +1,13 @@
 // lib/domain/usecases/login_usecase.dart
 import 'package:getx_mvvm_architecture/core/utils/logger_utils.dart';
+import 'package:getx_mvvm_architecture/data/repositories/auth_repo.dart';
 
-import '../repositories/auth_repository.dart';
+import '../repositories/auth_repo.dart';
 import '../entities/user_entity.dart';
 
-class LoginUseCase implements AuthRepository {
-  // final AuthRepository repository;
-  // LoginUseCase(this.repository);
+class AuthUseCase implements AuthRepository {
+  final AuthRepositoryImpl repository;
+  AuthUseCase(this.repository);
 
   final LoggerUtils logger = LoggerUtils();
 
@@ -14,7 +15,6 @@ class LoginUseCase implements AuthRepository {
   Future<UserEntity> login(String email, String password) {
     logger.log("usecase login run");
     // return throw UnimplementedError();
-    return Future<UserEntity>.value(
-        UserEntity(id: "1", name: "name", email: "email"));
+    return repository.login(email, password);
   }
 }
