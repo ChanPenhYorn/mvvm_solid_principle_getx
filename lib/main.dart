@@ -1,22 +1,24 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_mvvm_architecture/controllers/theme_controller.dart';
-import 'package:getx_mvvm_architecture/routes/app_page.dart';
-import 'package:getx_mvvm_architecture/routes/app_route.dart';
+import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
 
-import 'package:get/get.dart';
+import 'controllers/theme_controller.dart';
+import 'flavors.dart';
+import 'routes/app_page.dart';
+import 'routes/app_route.dart';
 
-void main() async {
+Future<void> mainClass(Flavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
 
   Get.put(ThemeController());
   AppTranslation translations = AppTranslation();
   await translations.loadTranslations();
-  runApp(MyApp(
-    translations: translations,
-  ));
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  F.appFlavor = flavor;
+  runApp(MyApp(translations: translations));
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
     return Obx(() => GetMaterialApp(
           locale: const Locale('en', 'US'), // Default locale
           fallbackLocale: const Locale('en', 'US'), // Fallback locale
+
           supportedLocales: const [
             Locale('en', 'US'),
             Locale('km', 'KH'),

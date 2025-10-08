@@ -16,17 +16,18 @@ dependencies:
   get: ^4.6.6
   rename: ^3.0.2
   shared_preferences: ^2.5.1
-  icons_launcher: ^3.0.1
+  flutter_launcher_icons: ^0.14.4
   firebase_core: ^3.12.1
   firebase_analytics: ^11.4.4
   package_info_plus: ^8.3.0
   flutter_svg: ^2.0.17
+  flutter_flavorizr: ^2.4.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
+  flutter_lints: ^5.0.0     
 
 flutter:
   uses-material-design: true
@@ -35,3 +36,31 @@ flutter:
     - assets/locales/
     - assets/svg/
     - assets/images/
+
+flavorizr:
+  ide: "vscode"
+  flavors:
+    Dev:
+      app:
+        name: "Dev App"
+      android:
+        applicationId: "com.sloid_principle_dev.com"  
+      ios:
+        bundleId: "com.sloid_principle_dev.com"
+
+    Staging:
+      app:
+        name: "Staging App"
+      android:
+        applicationId: "com.sloid_principle_staging.com"
+      ios:
+        bundleId: "com.sloid_principle_staging.com"
+        
+    Prod:
+      app:
+        name: "Prod App"
+      android:
+        applicationId: "com.sloid_principle.com"
+      ios:
+        bundleId: "com.sloid_principle.com"
+
