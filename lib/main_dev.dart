@@ -9,12 +9,13 @@ import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
 
 import 'controllers/theme_controller.dart';
-import 'firebase_options.dart';
+import 'firebase_options_dev.dart';
 import 'flavors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: "dev",
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // Pass all uncaught "fatal" errors from the framework to Crashlytics.
