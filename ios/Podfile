@@ -6,15 +6,15 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 # Project configurations
 project 'Runner', {
-  'Debug-Dev' => :debug,
-  'Profile-Dev' => :release,
-  'Release-Dev' => :release,
-  'Debug-Staging' => :debug,
-  'Profile-Staging' => :release,
-  'Release-Staging' => :release,
-  'Debug-Prod' => :debug,
-  'Profile-Prod' => :release,
-  'Release-Prod' => :release,
+  'Debug-dev' => :debug,
+  'Profile-dev' => :release,
+  'Release-dev' => :release,
+  'Debug-staging' => :debug,
+  'Profile-staging' => :release,
+  'Release-staging' => :release,
+  'Debug-prod' => :debug,
+  'Profile-prod' => :release,
+  'Release-prod' => :release,
 }
 
 # Locate Flutter root

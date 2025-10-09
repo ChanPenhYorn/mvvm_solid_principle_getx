@@ -1,7 +1,8 @@
-import 'package:getx_mvvm_architecture/main.dart';
+import 'package:getx_mvvm_architecture/main.dart' as runner;
 
 import 'flavors.dart';
 
-Future<void> main() async {
-  await mainClass(Flavor.prod);
+void main() {
+  F.appFlavor = Flavor.prod;
+  runner.main();
 }
