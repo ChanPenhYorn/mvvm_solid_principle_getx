@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/controllers/auth_controller.dart';
-import 'package:getx_mvvm_architecture/core/utils/logger_utils.dart';
+import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 
 class LoginScreen extends StatelessWidget {
   final emailController = TextEditingController();
@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
     final authController = Get.find<AuthController>();
     // final authController = Get.put(AuthController(LoginUseCase()));
 
-    final logger = LoggerUtils();
+    final logger = AppLogger();
 
     return Scaffold(
       appBar: AppBar(title: Text("Login")),
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                   emailController.text,
                   passwordController.text,
                 );
-                logger.log("Login button pressed");
+                AppLogger.log("Login button pressed");
               },
               child: Text("Login"),
             ),
