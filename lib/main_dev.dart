@@ -17,6 +17,5 @@ void main() {
   F.appFlavor = Flavor.dev;
 
   AppLogger.log("Run on Dev Environment");
-
   runApp(App(translations: translations));
 }

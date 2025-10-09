@@ -17,6 +17,5 @@ void main() {
   F.appFlavor = Flavor.prod;
 
   AppLogger.log("Run on Production Environment");
-
   runApp(App(translations: translations));
 }

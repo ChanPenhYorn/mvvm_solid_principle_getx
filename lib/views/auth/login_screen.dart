@@ -15,8 +15,6 @@ class LoginScreen extends StatelessWidget {
     final authController = Get.find<AuthController>();
     // final authController = Get.put(AuthController(LoginUseCase()));
 
-    final logger = AppLogger();
-
     return Scaffold(
       appBar: AppBar(title: Text("Login")),
       body: Obx(() {

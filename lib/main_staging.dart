@@ -17,6 +17,5 @@ void main() {
   F.appFlavor = Flavor.staging;
 
   AppLogger.log("Run on Staging Environment");
-
   runApp(App(translations: translations));
 }

@@ -22,6 +22,7 @@ dependencies:
   package_info_plus: ^8.3.0
   flutter_svg: ^2.0.17
   flutter_flavorizr: ^2.4.1
+  http: ^1.5.0
 
 dev_dependencies:
   flutter_test:
