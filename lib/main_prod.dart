@@ -16,18 +16,10 @@ import 'flavors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  FirebaseApp firebaseApp;
+  FirebaseApp firebaseApp = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-  if (Platform.isIOS) {
-    firebaseApp = await Firebase.initializeApp(
-      name: "prod",
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  } else {
-    firebaseApp = await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  }
   // Pass all uncaught "fatal" errors from the framework to Crashlytics.
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
