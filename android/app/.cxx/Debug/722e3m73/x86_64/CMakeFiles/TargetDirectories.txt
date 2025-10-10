@@ -1,2 +1,0 @@
-/Users/biz/Downloads/getx_mvvm_architecture/android/app/.cxx/Debug/722e3m73/x86_64/CMakeFiles/edit_cache.dir
-/Users/biz/Downloads/getx_mvvm_architecture/android/app/.cxx/Debug/722e3m73/x86_64/CMakeFiles/rebuild_cache.dir

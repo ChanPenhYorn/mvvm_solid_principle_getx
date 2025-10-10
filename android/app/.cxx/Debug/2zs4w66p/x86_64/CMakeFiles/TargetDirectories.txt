@@ -1,2 +1,0 @@
-/Volumes/LocalDiskE/biz_source/flutter/project/phum_parent_portal/android/app/.cxx/Debug/2zs4w66p/x86_64/CMakeFiles/edit_cache.dir
-/Volumes/LocalDiskE/biz_source/flutter/project/phum_parent_portal/android/app/.cxx/Debug/2zs4w66p/x86_64/CMakeFiles/rebuild_cache.dir
