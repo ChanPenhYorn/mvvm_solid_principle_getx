@@ -59,9 +59,13 @@ flavorizr:
         name: "Staging App"
       android:
         applicationId: "com.solid.principle.staging"
+        firebase:
+          config: ".firebase/staging/android/google-services.json"
  
       ios:
         bundleId: "com.solid.principle.staging"
+        firebase:
+          config: ".firebase/staging/ios/GoogleService-Info.plist"
 
         
     prod:
