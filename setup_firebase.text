@@ -1,7 +1,17 @@
   flutterfire configure \
-    --project=penh-delivery \
+    --project=mvvm-solid-principle \
+    --platforms=android,ios \
+    --android-package-name=com.solid.principle.dev \
+    --ios-bundle-id=com.solid.principle.dev \
+    --out=lib/firebase_options_dev.dart \
+    --yes
+
+
+
+    flutterfire configure \
+    --project=mvvm-solid-principle \
     --platforms=android,ios,web,macos,windows \
-    --android-package-name=com.penh.delivery \
-    --ios-bundle-id=com.penh.delivery \
-    --out=lib/firebase_options.dart \
+    --android-package-name=com.solid.principle.staging \
+    --ios-bundle-id=com.solid.principle.staging \
+    --out=lib/firebase_options_staging.dart \
     --yes

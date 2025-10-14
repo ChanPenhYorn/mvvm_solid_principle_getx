@@ -37,3 +37,41 @@ flutter:
     - assets/locales/
     - assets/svg/
     - assets/images/
+
+flavorizr:
+  ide: "vscode"
+  flavors:
+    dev:
+      app:
+        name: "Dev App"
+      android:
+        applicationId: "com.solid.principle.dev"
+        firebase:
+          config: ".firebase/dev/android/google-services.json"
+      ios:
+        bundleId: "com.solid.principle.dev" 
+        firebase:
+          config: ".firebase/dev/ios/GoogleService-Info.plist"
+
+
+    staging:
+      app:
+        name: "Staging App"
+      android:
+        applicationId: "com.solid.principle.staging"
+ 
+      ios:
+        bundleId: "com.solid.principle.staging"
+
+        
+    prod:
+      app:
+        name: "Prod App"
+      android:
+        applicationId: "com.solid.principle"
+        firebase:
+          config: ".firebase/prod/android/google-services.json"
+      ios:
+        bundleId: "com.solid.principle"
+        firebase:
+          config: ".firebase/prod/ios/GoogleService-Info.plist"

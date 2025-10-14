@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,9 +28,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -40,49 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDvJqLXEaOBBLpHUJFjCFtm4ZM9JlgYVtM',
-    appId: '1:187044582223:web:c858862a720987f4f92b3a',
-    messagingSenderId: '187044582223',
-    projectId: 'mvvm-solid-principle-dev',
-    authDomain: 'mvvm-solid-principle-dev.firebaseapp.com',
-    storageBucket: 'mvvm-solid-principle-dev.firebasestorage.app',
-    measurementId: 'G-GBP7FYXRE3',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBr5NLEuJdsiJu43G81mshISEHOhyMmMXQ',
-    appId: '1:187044582223:android:9f1927b13fa3bd6ff92b3a',
-    messagingSenderId: '187044582223',
-    projectId: 'mvvm-solid-principle-dev',
-    storageBucket: 'mvvm-solid-principle-dev.firebasestorage.app',
+    apiKey: 'AIzaSyDSMUH41FAQFE6tsg13f5R_a3kroWtYXeA',
+    appId: '1:737337961463:android:2e45e23a5372f9ba0cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCH5IvazWsX7bJ6w_FgiBj2ry5geMeNAQU',
-    appId: '1:187044582223:ios:473367ffde45e5e9f92b3a',
-    messagingSenderId: '187044582223',
-    projectId: 'mvvm-solid-principle-dev',
-    storageBucket: 'mvvm-solid-principle-dev.firebasestorage.app',
+    apiKey: 'AIzaSyA57uo1M0fTBS5zCYcUCIaKHXy42JuYoqQ',
+    appId: '1:737337961463:ios:bff215e1e6fd42c80cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
     iosBundleId: 'com.solid.principle.dev',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCH5IvazWsX7bJ6w_FgiBj2ry5geMeNAQU',
-    appId: '1:187044582223:ios:f148fa7d64c290e3f92b3a',
-    messagingSenderId: '187044582223',
-    projectId: 'mvvm-solid-principle-dev',
-    storageBucket: 'mvvm-solid-principle-dev.firebasestorage.app',
-    iosBundleId: 'com.example.todoKh',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDvJqLXEaOBBLpHUJFjCFtm4ZM9JlgYVtM',
-    appId: '1:187044582223:web:555d1ea0031d1ccdf92b3a',
-    messagingSenderId: '187044582223',
-    projectId: 'mvvm-solid-principle-dev',
-    authDomain: 'mvvm-solid-principle-dev.firebaseapp.com',
-    storageBucket: 'mvvm-solid-principle-dev.firebasestorage.app',
-    measurementId: 'G-PRSTJJ028K',
   );
 }

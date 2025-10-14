@@ -41,48 +41,46 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDPL7O23fDf6A3JkrZ2LsPTH9U40mQeylA',
-    appId: '1:894248668835:web:ea6f871490f729a11e7916',
-    messagingSenderId: '894248668835',
-    projectId: 'mvvm-solid-principle-staging',
-    authDomain: 'mvvm-solid-principle-staging.firebaseapp.com',
-    storageBucket: 'mvvm-solid-principle-staging.firebasestorage.app',
-    measurementId: 'G-NYKPDPLXB6',
+    apiKey: 'AIzaSyDMH1hoOaHdJmv38mMpTAVrK7d3_iDb5es',
+    appId: '1:737337961463:web:bb34f42019ec233d0cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    authDomain: 'mvvm-solid-principle.firebaseapp.com',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCs5b9jFg8F1dvtNkEmbcvqjZY9Lmu2ulc',
-    appId: '1:894248668835:android:e9742da01a3b60711e7916',
-    messagingSenderId: '894248668835',
-    projectId: 'mvvm-solid-principle-staging',
-    storageBucket: 'mvvm-solid-principle-staging.firebasestorage.app',
+    apiKey: 'AIzaSyDSMUH41FAQFE6tsg13f5R_a3kroWtYXeA',
+    appId: '1:737337961463:android:2b483c9dccaa612b0cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCKQIvTFyrXLGXH_VdqKOxsAbxj56s83Z4',
-    appId: '1:894248668835:ios:b21fdc194c39d6dc1e7916',
-    messagingSenderId: '894248668835',
-    projectId: 'mvvm-solid-principle-staging',
-    storageBucket: 'mvvm-solid-principle-staging.firebasestorage.app',
+    apiKey: 'AIzaSyA57uo1M0fTBS5zCYcUCIaKHXy42JuYoqQ',
+    appId: '1:737337961463:ios:631208567fa866680cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
     iosBundleId: 'com.solid.principle.staging',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCKQIvTFyrXLGXH_VdqKOxsAbxj56s83Z4',
-    appId: '1:894248668835:ios:64622205d2057f681e7916',
-    messagingSenderId: '894248668835',
-    projectId: 'mvvm-solid-principle-staging',
-    storageBucket: 'mvvm-solid-principle-staging.firebasestorage.app',
+    apiKey: 'AIzaSyA57uo1M0fTBS5zCYcUCIaKHXy42JuYoqQ',
+    appId: '1:737337961463:ios:49e50af096d0572d0cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
     iosBundleId: 'com.example.todoKh',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDPL7O23fDf6A3JkrZ2LsPTH9U40mQeylA',
-    appId: '1:894248668835:web:10f92e523a755e0e1e7916',
-    messagingSenderId: '894248668835',
-    projectId: 'mvvm-solid-principle-staging',
-    authDomain: 'mvvm-solid-principle-staging.firebaseapp.com',
-    storageBucket: 'mvvm-solid-principle-staging.firebasestorage.app',
-    measurementId: 'G-GKXX4B96V2',
+    apiKey: 'AIzaSyDMH1hoOaHdJmv38mMpTAVrK7d3_iDb5es',
+    appId: '1:737337961463:web:34efeef20fb0e9f40cdcf2',
+    messagingSenderId: '737337961463',
+    projectId: 'mvvm-solid-principle',
+    authDomain: 'mvvm-solid-principle.firebaseapp.com',
+    storageBucket: 'mvvm-solid-principle.firebasestorage.app',
   );
 }
