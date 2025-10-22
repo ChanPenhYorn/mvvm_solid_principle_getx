@@ -5,22 +5,21 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:getx_mvvm_architecture/controllers/theme_controller.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
-import 'package:getx_mvvm_architecture/firebase_options.dart'
-    as DefaultFirebaseOptionsProd; // <-- Generated per flavor
+import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
 import 'package:getx_mvvm_architecture/firebase_options_dev.dart'
-    as DefaultFirebaseOptionsDev; // <-- Generated per flavor
-
+    // ignore: library_prefixes
+    as DefaultFirebaseOptionsDev;
 import 'package:getx_mvvm_architecture/firebase_options_staging.dart'
-    as DefaultFirebaseOptionsStaging; // <-- Generated per flavor
-
+    // ignore: library_prefixes
+    as DefaultFirebaseOptionsStaging;
+import 'package:getx_mvvm_architecture/firebase_options.dart'
+    // ignore: library_prefixes
+    as DefaultFirebaseOptionsProd;
+import 'package:package_info_plus/package_info_plus.dart';
 import 'app.dart';
+import 'controllers/theme_controller.dart';
 import 'flavors.dart';
-
-// This will be passed via --dart-define or build config
-const String appFlavor =
-    String.fromEnvironment('APP_FLAVOR', defaultValue: 'dev');
 
 void main() async {
   // 1. Ensure Flutter is initialized
@@ -30,12 +29,12 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
-
-  // 3. Set app flavor
   F.appFlavor = Flavor.values.firstWhere(
     (element) => element.name == appFlavor,
-    orElse: () => Flavor.dev, // fallback
+    orElse: () => Flavor.dev,
   );
+
+  AppLogger.log("Flavor: ${F.appFlavor}");
 
   try {
     FirebaseApp firebaseApp;
@@ -57,8 +56,6 @@ void main() async {
     AppLogger.log("  - Project ID: ${firebaseApp.options.projectId}");
     AppLogger.log("  - App ID: ${firebaseApp.options.appId}");
     AppLogger.log("  - API Key: ${firebaseApp.options.apiKey}");
-    AppLogger.log(
-        "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
 
     // 5. Pass uncaught errors to Crashlytics
     FlutterError.onError = (errorDetails) {
@@ -79,7 +76,14 @@ void main() async {
 
   // 7. Initialize GetX Controllers
   Get.put(ThemeController());
+  AppTranslation translations = AppTranslation();
+  translations.loadTranslations();
 
-  // 8. Run App
-  runApp(const App());
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  String bundleId = packageInfo.packageName;
+
+  AppLogger.log("Run on Dev Environment");
+  AppLogger.log("Dev Bundle ID: $bundleId");
+
+  runApp(App(translations: translations));
 }
