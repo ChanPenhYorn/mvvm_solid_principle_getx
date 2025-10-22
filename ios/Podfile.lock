@@ -1,9 +1,4 @@
 PODS:
-  - Firebase/Analytics (12.2.0):
-    - Firebase/Core
-  - Firebase/Core (12.2.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 12.2.0)
   - Firebase/CoreOnly (12.2.0):
     - FirebaseCore (~> 12.2.0)
   - Firebase/Crashlytics (12.2.0):
@@ -142,7 +137,6 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - Firebase/Analytics
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
@@ -207,6 +201,6 @@ SPEC CHECKSUMS:
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
   shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
 
-PODFILE CHECKSUM: fae5f5e1df8688a9a76f07f253da0c7b855c7942
+PODFILE CHECKSUM: 2bdee11bbc673aecd0b20464a68af02c89ba4f40
 
 COCOAPODS: 1.16.2
