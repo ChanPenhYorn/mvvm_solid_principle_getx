@@ -1,10 +1,10 @@
-import 'dart:async';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:getx_mvvm_architecture/controllers/theme_controller.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
 
@@ -20,7 +20,9 @@ void main() async {
   FirebaseApp firebaseApp = await Firebase.initializeApp();
 
   // Pass all uncaught "fatal" errors from the framework to Crashlytics.
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  if (!kDebugMode) {
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  }
 
   // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics.
   PlatformDispatcher.instance.onError = (error, stack) {
@@ -39,5 +41,7 @@ void main() async {
       "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
   AppTranslation translations = AppTranslation();
   translations.loadTranslations();
+
+  Get.put(ThemeController());
   runApp(App(translations: translations));
 }

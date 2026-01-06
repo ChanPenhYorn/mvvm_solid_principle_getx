@@ -48,11 +48,7 @@ flavorizr:
         applicationId: "com.solid.principle.dev"
       ios:
         bundleId: "com.solid.principle.dev"
-      firebase:
-        android:
-          googleServicesFile: ".firebase/dev/android/google-services.json"
-        ios:
-          googleServicesFile: ".firebase/dev/ios/GoogleService-Info.plist"
+
 
     staging:
       app:
@@ -61,11 +57,7 @@ flavorizr:
         applicationId: "com.solid.principle.staging"
       ios:
         bundleId: "com.solid.principle.staging"
-      firebase:
-        android:
-          googleServicesFile: ".firebase/staging/android/google-services.json"
-        ios:
-          googleServicesFile: ".firebase/staging/ios/GoogleService-Info.plist"
+
 
     prod:
       app:
@@ -74,10 +66,6 @@ flavorizr:
         applicationId: "com.solid.principle"
       ios:
         bundleId: "com.solid.principle"
-      firebase:
-        android:
-          googleServicesFile: ".firebase/prod/android/google-services.json"
-        ios:
-          googleServicesFile: ".firebase/prod/ios/GoogleService-Info.plist"
+
 
     
