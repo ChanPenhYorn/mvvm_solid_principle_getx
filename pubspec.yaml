@@ -44,6 +44,7 @@ flavorizr:
     dev:
       app:
         name: "Dev App"
+        icon: "assets/images/app_logo_dev.png"
       android:
         applicationId: "com.solid.principle.dev"
       ios:
@@ -53,6 +54,7 @@ flavorizr:
     staging:
       app:
         name: "Staging App"
+        icon: "assets/images/app_logo_staging.png"
       android:
         applicationId: "com.solid.principle.staging"
       ios:
@@ -62,6 +64,7 @@ flavorizr:
     prod:
       app:
         name: "Prod App"
+        icon: "assets/images/app_logo.png"
       android:
         applicationId: "com.solid.principle"
       ios:

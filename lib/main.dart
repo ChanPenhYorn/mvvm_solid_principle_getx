@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/controllers/theme_controller.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import 'app.dart';
 import 'flavors.dart';
@@ -30,18 +31,26 @@ void main() async {
     return true;
   };
 
-  // Log Firebase info
-  AppLogger.log("🔥 Firebase initialized successfully");
-  AppLogger.log("App name: ${firebaseApp.name}");
-  AppLogger.log("Firebase options:");
-  AppLogger.log("  - Project ID: ${firebaseApp.options.projectId}");
-  AppLogger.log("  - App ID: ${firebaseApp.options.appId}");
-  AppLogger.log("  - API Key: ${firebaseApp.options.apiKey}");
-  AppLogger.log(
-      "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
+  logAppInfo(firebaseApp);
   AppTranslation translations = AppTranslation();
   translations.loadTranslations();
 
   Get.put(ThemeController());
   runApp(App(translations: translations));
+}
+
+Future<void> logAppInfo(FirebaseApp firebaseApp) async {
+  final info = await PackageInfo.fromPlatform();
+  AppLogger.log("🔥 App info:");
+  AppLogger.log("  - App Name: ${info.appName}");
+  AppLogger.log("  - Package Name / Bundle ID: ${info.packageName}");
+  AppLogger.log("  - Version: ${info.version}");
+  AppLogger.log("  - Build Number: ${info.buildNumber}");
+
+  AppLogger.log("🔥 Firebase info:");
+  AppLogger.log("  - App ID: ${firebaseApp.options.appId}");
+  AppLogger.log("  - Project ID: ${firebaseApp.options.projectId}");
+  AppLogger.log("  - API Key: ${firebaseApp.options.apiKey}");
+  AppLogger.log(
+      "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
 }
