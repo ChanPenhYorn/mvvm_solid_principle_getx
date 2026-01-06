@@ -1,24 +1,23 @@
-import 'dart:io';
-import 'dart:ui';
+import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:getx_mvvm_architecture/app.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_translation.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 
-import 'controllers/theme_controller.dart';
-import 'firebase_options.dart';
+import 'app.dart';
 import 'flavors.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  FirebaseApp firebaseApp = await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+void main() async {
+  F.appFlavor = Flavor.values.firstWhere(
+    (element) => element.name == appFlavor,
   );
+
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseApp firebaseApp = await Firebase.initializeApp();
 
   // Pass all uncaught "fatal" errors from the framework to Crashlytics.
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
@@ -38,16 +37,7 @@ Future<void> main() async {
   AppLogger.log("  - API Key: ${firebaseApp.options.apiKey}");
   AppLogger.log(
       "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
-
-  Get.put(ThemeController());
   AppTranslation translations = AppTranslation();
   translations.loadTranslations();
-  F.appFlavor = Flavor.prod;
-
-  PackageInfo packageInfo = await PackageInfo.fromPlatform();
-  String bundleId = packageInfo.packageName;
-
-  AppLogger.log("Run on Production Environment");
-  AppLogger.log("Prod Bundle ID: $bundleId");
   runApp(App(translations: translations));
 }
