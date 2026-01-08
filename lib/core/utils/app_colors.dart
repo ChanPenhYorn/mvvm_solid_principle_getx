@@ -33,4 +33,13 @@ class AppColors {
 
   static const Color onErrorLight = Colors.white;
   static const Color onErrorDark = Colors.black;
+
+  // Custom AMK Colors
+  static const Color amkPrimary = Color(0xFF983256); // Approximate AMK Red/Pink
+  static const Color amkLightPink = Color(0xFFFFEBF0);
+  static const Color amkGray = Color(0xFFBDBDBD);
+  static const Color amkGradientStart = Color(0xFFB03A5B);
+  static const Color amkGradientEnd = Color(0xFF702336);
+
+  static const Color white = Color(0xFFFFFFFF);
 }

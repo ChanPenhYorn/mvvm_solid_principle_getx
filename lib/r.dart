@@ -1,6 +1,13 @@
 class AssetLocales {
   static const String en = 'assets/locales/en.json';
   static const String km = 'assets/locales/km.json';
+
+  static const String cn = 'assets/locales/cn.json';
+}
+
+class AssetImages {
+  static const String splash = 'assets/images/amk_splash.jpg';
+  static const String amkNoBg = 'assets/images/amk_no_bg.png';
 }
 
 class AssetSvg {
