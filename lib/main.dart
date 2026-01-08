@@ -41,16 +41,16 @@ void main() async {
 
 Future<void> logAppInfo(FirebaseApp firebaseApp) async {
   final info = await PackageInfo.fromPlatform();
-  AppLogger.log("🔥 App info:");
-  AppLogger.log("  - App Name: ${info.appName}");
-  AppLogger.log("  - Package Name / Bundle ID: ${info.packageName}");
-  AppLogger.log("  - Version: ${info.version}");
-  AppLogger.log("  - Build Number: ${info.buildNumber}");
+  AppLogger.logInfo("🔥 App info:");
+  AppLogger.logInfo("  - App Name: ${info.appName}");
+  AppLogger.logInfo("  - Package Name / Bundle ID: ${info.packageName}");
+  AppLogger.logInfo("  - Version: ${info.version}");
+  AppLogger.logInfo("  - Build Number: ${info.buildNumber}");
 
-  AppLogger.log("🔥 Firebase info:");
-  AppLogger.log("  - App ID: ${firebaseApp.options.appId}");
-  AppLogger.log("  - Project ID: ${firebaseApp.options.projectId}");
-  AppLogger.log("  - API Key: ${firebaseApp.options.apiKey}");
-  AppLogger.log(
+  AppLogger.logInfo("🔥 Firebase info:");
+  AppLogger.logInfo("  - App ID: ${firebaseApp.options.appId}");
+  AppLogger.logInfo("  - Project ID: ${firebaseApp.options.projectId}");
+  AppLogger.logInfo("  - API Key: ${firebaseApp.options.apiKey}");
+  AppLogger.logInfo(
       "  - Messaging Sender ID: ${firebaseApp.options.messagingSenderId}");
 }

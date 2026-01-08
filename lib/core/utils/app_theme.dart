@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:getx_mvvm_architecture/core/utils/app_font.dart';
 import 'app_colors.dart'; // Import your AppColors class
 
 class AppThemes {
-  // Define a custom light theme.
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    colorScheme: _lightColorScheme, // Use the light color scheme
+    colorScheme: _lightColorScheme,
     scaffoldBackgroundColor: AppColors.backgroundLight,
     textTheme: _getTextTheme(false),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.primaryLight,
-      titleTextStyle: TextStyle(
-          color: AppColors.onPrimaryLight,
-          fontSize: 20,
-          fontWeight: FontWeight.bold),
+      titleTextStyle: AppFont.bold(
+        color: AppColors.onPrimaryLight,
+        fontSizeValue: 20,
+      ),
     ),
   );
 
-  // Define a custom dark theme.
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    colorScheme: _darkColorScheme, // Use the dark color scheme
+    colorScheme: _darkColorScheme,
     scaffoldBackgroundColor: AppColors.backgroundDark,
     textTheme: _getTextTheme(true),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.primaryDark,
-      titleTextStyle: TextStyle(
-          color: AppColors.onPrimaryDark,
-          fontSize: 20,
-          fontWeight: FontWeight.bold),
+      titleTextStyle: AppFont.bold(
+        color: AppColors.onPrimaryDark,
+        fontSizeValue: 20,
+      ),
     ),
   );
 
-  // Define the ColorScheme for the light theme.
   static const ColorScheme _lightColorScheme = ColorScheme(
     brightness: Brightness.light,
     primary: AppColors.primaryLight,
@@ -41,15 +39,10 @@ class AppThemes {
     onSecondary: AppColors.onPrimaryLight,
     error: AppColors.errorLight,
     onError: AppColors.onErrorLight,
-    // ignore: deprecated_member_use
-    background: AppColors.backgroundLight,
-    // ignore: deprecated_member_use
-    onBackground: AppColors.onBackgroundLight,
     surface: AppColors.surfaceLight,
     onSurface: AppColors.onSurfaceLight,
   );
 
-  // Define the ColorScheme for the dark theme.
   static const ColorScheme _darkColorScheme = ColorScheme(
     brightness: Brightness.dark,
     primary: AppColors.primaryDark,
@@ -58,10 +51,6 @@ class AppThemes {
     onSecondary: AppColors.onPrimaryDark,
     error: AppColors.errorDark,
     onError: AppColors.onErrorDark,
-    // ignore: deprecated_member_use
-    background: AppColors.backgroundDark,
-    // ignore: deprecated_member_use
-    onBackground: AppColors.onBackgroundDark,
     surface: AppColors.surfaceDark,
     onSurface: AppColors.onSurfaceDark,
   );
@@ -70,21 +59,24 @@ class AppThemes {
     double fontSize = 16;
     final color = isDark ? AppColors.onSurfaceDark : AppColors.onSurfaceLight;
     return TextTheme(
-      displayLarge: TextStyle(fontSize: fontSize + 41, color: color),
-      displayMedium: TextStyle(fontSize: fontSize + 29, color: color),
-      displaySmall: TextStyle(fontSize: fontSize + 20, color: color),
-      headlineLarge: TextStyle(fontSize: fontSize + 16, color: color),
-      headlineMedium: TextStyle(fontSize: fontSize + 12, color: color),
-      headlineSmall: TextStyle(fontSize: fontSize + 8, color: color),
-      titleLarge: TextStyle(fontSize: fontSize + 6, color: color),
-      titleMedium: TextStyle(fontSize: fontSize, color: color),
-      titleSmall: TextStyle(fontSize: fontSize - 2, color: color),
-      bodyLarge: TextStyle(fontSize: fontSize, color: color),
-      bodyMedium: TextStyle(fontSize: fontSize - 2, color: color),
-      bodySmall: TextStyle(fontSize: fontSize - 4, color: color),
-      labelLarge: TextStyle(fontSize: fontSize - 2, color: color),
-      labelMedium: TextStyle(fontSize: fontSize - 4, color: color),
-      labelSmall: TextStyle(fontSize: fontSize - 5, color: color),
+      displayLarge: AppFont.regular(fontSizeValue: fontSize + 41, color: color),
+      displayMedium:
+          AppFont.regular(fontSizeValue: fontSize + 29, color: color),
+      displaySmall: AppFont.regular(fontSizeValue: fontSize + 20, color: color),
+      headlineLarge:
+          AppFont.regular(fontSizeValue: fontSize + 16, color: color),
+      headlineMedium:
+          AppFont.regular(fontSizeValue: fontSize + 12, color: color),
+      headlineSmall: AppFont.regular(fontSizeValue: fontSize + 8, color: color),
+      titleLarge: AppFont.regular(fontSizeValue: fontSize + 6, color: color),
+      titleMedium: AppFont.regular(fontSizeValue: fontSize, color: color),
+      titleSmall: AppFont.regular(fontSizeValue: fontSize - 2, color: color),
+      bodyLarge: AppFont.regular(fontSizeValue: fontSize, color: color),
+      bodyMedium: AppFont.regular(fontSizeValue: fontSize - 2, color: color),
+      bodySmall: AppFont.regular(fontSizeValue: fontSize - 4, color: color),
+      labelLarge: AppFont.regular(fontSizeValue: fontSize - 2, color: color),
+      labelMedium: AppFont.regular(fontSizeValue: fontSize - 4, color: color),
+      labelSmall: AppFont.regular(fontSizeValue: fontSize - 5, color: color),
     );
   }
 }

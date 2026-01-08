@@ -1,4 +1,5 @@
 // lib/controllers/auth_controller.dart
+
 import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/domain/usecases/auth_usecase.dart';
@@ -16,7 +17,7 @@ class AuthController extends GetxController {
 
   Future<void> login(String email, String password) async {
     isLoading.value = true;
-    AppLogger.log("controller login run");
+    AppLogger.logInfo("controller login run");
     user.value = await loginUseCase.login(email, password);
     isLoading.value = false;
   }

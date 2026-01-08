@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                   emailController.text,
                   passwordController.text,
                 );
-                AppLogger.log("Login button pressed");
+                AppLogger.logInfo("Login button pressed");
               },
               child: Text("Login"),
             ),

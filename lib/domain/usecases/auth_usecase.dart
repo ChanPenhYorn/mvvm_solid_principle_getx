@@ -1,4 +1,3 @@
-// lib/domain/usecases/login_usecase.dart
 import 'package:getx_mvvm_architecture/core/utils/app_logger.dart';
 import 'package:getx_mvvm_architecture/data/repositories/auth_repo.dart';
 
@@ -13,7 +12,7 @@ class AuthUseCase implements AuthRepository {
 
   @override
   Future<UserEntity> login(String email, String password) {
-    AppLogger.log("usecase login run");
+    AppLogger.logInfo("usecase login run");
     // return throw UnimplementedError();
     return repository.login(email, password);
   }

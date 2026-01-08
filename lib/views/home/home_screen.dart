@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/controllers/theme_controller.dart';
+import 'package:getx_mvvm_architecture/core/utils/extensions.dart';
+import 'package:gap/gap.dart';
 
 class HomeScreen extends StatelessWidget {
   final ThemeController themeController = Get.find();
@@ -10,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.colors.surface,
       appBar: AppBar(
         title: Text('Custom Theme Switcher'),
       ),
@@ -19,8 +22,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             Text(
               'Current Theme:',
-              style: Theme.of(context)
-                  .textTheme
+              style: context.textTheme
                   .bodyMedium, // Use the custom text style from the theme
             ),
             Obx(() {
@@ -29,13 +31,16 @@ class HomeScreen extends StatelessWidget {
                   ? 'Light Theme'
                   : 'Dark Theme');
             }),
-            SizedBox(height: 20),
+            Gap(20),
             ElevatedButton(
               onPressed: () {
                 // Toggle the theme when the button is pressed.
                 themeController.toggleTheme();
               },
               child: Text('Toggle Theme'),
+            ),
+            Row(
+              children: <Widget>[],
             ),
           ],
         ),
