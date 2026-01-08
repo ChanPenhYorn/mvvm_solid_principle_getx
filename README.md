@@ -17,3 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 # mvvm getx folder achitecture
 # getx_mvvm_architecture
+# amk_bank_clone
