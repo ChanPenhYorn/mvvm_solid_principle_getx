@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvvm_architecture/controllers/splash_controller.dart';
-import 'package:getx_mvvm_architecture/r.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -11,11 +10,15 @@ class SplashScreen extends StatelessWidget {
     Get.find<SplashController>();
 
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(AssetImages.splash), fit: BoxFit.cover)),
-        ));
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      body: Center(
+        child: ClipOval(
+            child: Image.asset(
+          "assets/images/app_logo.png",
+          width: 100,
+          height: 100,
+        )),
+      ),
+    );
   }
 }
