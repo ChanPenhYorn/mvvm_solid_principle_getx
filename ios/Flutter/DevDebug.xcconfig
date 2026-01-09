@@ -2,5 +2,5 @@
 #include "Generated.xcconfig"
 
 ASSET_PREFIX=dev
-BUNDLE_NAME=AMK Dev
-BUNDLE_DISPLAY_NAME=AMK Dev
+BUNDLE_NAME=App Dev
+BUNDLE_DISPLAY_NAME=App Dev

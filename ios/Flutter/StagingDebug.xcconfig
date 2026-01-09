@@ -2,5 +2,5 @@
 #include "Generated.xcconfig"
 
 ASSET_PREFIX=staging
-BUNDLE_NAME=AMK Staging
-BUNDLE_DISPLAY_NAME=AMK Staging
+BUNDLE_NAME=App Staging
+BUNDLE_DISPLAY_NAME=App Staging

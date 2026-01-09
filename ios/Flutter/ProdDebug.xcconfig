@@ -2,5 +2,5 @@
 #include "Generated.xcconfig"
 
 ASSET_PREFIX=prod
-BUNDLE_NAME=AMK Prod
-BUNDLE_DISPLAY_NAME=AMK Prod
+BUNDLE_NAME=App Prod
+BUNDLE_DISPLAY_NAME=App Prod
